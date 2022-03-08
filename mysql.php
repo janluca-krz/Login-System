@@ -1,6 +1,6 @@
 <?php
 $host = "localhost";
-$name = "test";
+$name = "tutorial";
 $user = "root";
 $passwort = "";
 try {

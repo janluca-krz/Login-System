@@ -11,7 +11,7 @@
   <header class="index_main_header">
     <ul class="index_main_unorderdlist">
       <li><a href="#">Home</a></li>
-      <li><a href="#">Products</a></li>
+      <li><a href="Products.php">Products</a></li>
       <li><a href="profil.php">      
       <?php
       session_start();
@@ -19,6 +19,19 @@
       ?></a>
     </ul>
   </header>
+  
+  <?php
+    require("rankmanager.php");
+
+    if(getRanked($_SESSION['username']) >= "MOD") {
+      echo "Du kannst de Nachricht sehen";
+      return true;
+    } else {
+      echo "Du hast keine Rechte um diese Nachrich zu sehen";
+      return false;
+    }
+  ?>
+
   
 
 <script src="profilebutton.js"></script>
