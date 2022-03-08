@@ -20,7 +20,7 @@ if(isset($_POST["submit"])) {
             $stmt->bindParam(":token", $token);
             $stmt->bindParam(":email", $_POST["email"]);
             $stmt->execute();
-            mail($_POST["email"], "Password zurücksetzen", "http://localhost/penis/setPassword.php?token=" <div class="1"></div>token)
+            mail($_POST["email"], "Password zurücksetzen", "http://localhost/penis/setPassword.php?token=" . '<div class="1"></div>token');
             
 
         } else {
@@ -42,7 +42,7 @@ function generateRandomString($lenght = 10) {
     <h1>Passwort Vergessen</h1>
     <form action="pwreset.php" method="POST">
         <input type="email" name="email" placeholder= "Email" required>
-        <button type = "submit" name = "submit"></button>
+        <button type = "submit" name = "submit">Senden</button> <br>
     </form>
 </body>
 </html>

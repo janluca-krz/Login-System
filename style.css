@@ -14,6 +14,16 @@
     padding: 1.5em;
 }
 
+.content {
+    height: 20em;
+    width: 10em;
+    background-color: gray;
+    position: absolute;
+    left: 97em;
+    display: flex;
+    justify-content: center;
+}
+
 .index_main_unorderdlist {
     display: grid;
     grid-template-columns: 70% 15% 15%;
@@ -96,4 +106,16 @@ li .hamburger:nth-child(1) {
         display: none;
     }
     
+}
+
+
+.Profile_Main {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    
+}
+
+.settingImage {
+    transform: translateY(.2em);
+    padding-left: .3em;
 }

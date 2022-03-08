@@ -1,0 +1,3 @@
+<?php
+
+$isLoggedin = false;

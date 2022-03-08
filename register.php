@@ -28,6 +28,7 @@
               $hash = password_hash($_POST["pw"], PASSWORD_BCRYPT);
               $stmt->bindParam(":pw", $hash);
               $stmt->bindParam(":email", $_POST["email"]);
+              $_SESSION['email'] = $stmt->bindParam(":email", $_POST["email"]);
               $stmt->execute();
               echo "Dein Account wurde angelegt";
               header("Location: login.php");
@@ -48,7 +49,8 @@
         <input name = "email" placeholder="Gebe deine Email ein" required type="text"><br>
         <input type="password" name="pw" placeholder="Gebe dein Passwort ein" required><br>
         <input type="password" name="pw2" placeholder="Gebe dein Passwort erneut an" required><br>
-        <button type="submit" name="submit">Erstellen</button>
+        <button type="submit" name="submit">Erstellen</button> <br>
+        <a href="login.php">Zurück</a>
     </form>
     <br>
     <a href="index.php"></a>

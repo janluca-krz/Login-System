@@ -6,6 +6,8 @@
   </head>
   <body>
     <?php
+
+
     if(isset($_POST["submit"])){
       require("mysql.php");
       $stmt = $mysql->prepare("SELECT * FROM accounts WHERE USERNAME = :user"); //Username überprüfen
@@ -18,9 +20,13 @@
         if(password_verify($_POST["pw"], $row["PASSWORD"])){
           session_start();
           $_SESSION["username"] = $row["USERNAME"];
-          header("Location: index.html");
+          $_SESSION["pw"] = $row["pw"];
+          header("Location: index.php");
+
+
         } else {
           echo "Der Login ist fehlgeschlagen";
+
         }
       } else {
         echo "Der Login ist fehlgeschlagen";
